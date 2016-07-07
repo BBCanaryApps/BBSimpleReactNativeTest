@@ -1,9 +1,15 @@
-import React, { View, Image, StyleSheet, PropTypes, MapView, Text, LinkingIOS, TouchableOpacity } from 'react-native';
+import
+    React,
+{Component} from 'react';
+import
+{
+    StyleSheet, Text, View, Image, ListView, TouchableOpacity, SliderIOS, ScrollView, AlertIOS
+} from 'react-native';
 
 export default class MediaView extends React.Component {
 
   static propTypes = {
-    media: PropTypes.object
+    media: React.PropTypes.object
   }
 
   onImagePress() {
@@ -16,7 +22,7 @@ export default class MediaView extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.mediaContainer}>
-          <TouchableOpacity onPress={::this.onImagePress}>
+          <TouchableOpacity onPress={this.onImagePress.bind(this)}>
             <Image
               source={{ uri: media.images.standard_resolution.url }}
               style={styles.thumbnail}

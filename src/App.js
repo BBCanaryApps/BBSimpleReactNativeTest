@@ -1,4 +1,11 @@
-import React, { NavigatorIOS, StyleSheet } from 'react-native';
+import React, { Component } from 'react';
+import {
+    NavigatorIOS,
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View
+} from 'react-native';
 import { MediaList } from './views';
 
 export default class App extends React.Component {

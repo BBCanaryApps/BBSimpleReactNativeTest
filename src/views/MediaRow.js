@@ -1,16 +1,17 @@
 import
-  React,
-  {
-    StyleSheet, Text, View, Image, ListView, TouchableOpacity, SliderIOS, ScrollView, Animated, PropTypes
-   } from 'react-native';
-import { MediaView } from '../views';
+    React,
+{Component} from 'react';
+import
+{
+    StyleSheet, Text, View, Image, ListView, TouchableOpacity, SliderIOS, ScrollView, AlertIOS
+} from 'react-native';
 import Moment from 'moment';
 
 
 export default class MediaRow extends React.Component {
 
   static propTypes = {
-    media: PropTypes.object
+    media: React.PropTypes.object
   }
 
   state = {
@@ -53,7 +54,7 @@ export default class MediaRow extends React.Component {
             <Image
               source={{uri: media.images.low_resolution.url}}
               style={styles.thumbnail}
-              onLoad={::this.onImageLoad}
+              onLoad={this.onImageLoad.bind(this)}
             />
             <Text style={styles.date}>
               {createdTime}
